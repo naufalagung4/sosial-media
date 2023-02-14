@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sosial-media-deployment
+  name: pesbuk-deployment
   labels:
     app: sosial-media
 spec:
