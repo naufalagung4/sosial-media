@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sosial-media
-        image: registry.hub.docker.com/dylanjuan/sosial-media
+        image: dylanjuan/sosial-media
         ports:
         - containerPort: 80
 
