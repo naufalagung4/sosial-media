@@ -1,24 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sosial-media-deployment
+  name: sosmed-deployment
   labels:
-    label-key1: label-value1
-  annotations:
-    annotation-key1: annotation-value1
+    app: sosial-media
 spec:
   replicas: 3
   selector:
     matchLabels:
-      label-key1: label-value1
+      app: sosial-media
   template:
     metadata:
-      name: sosial-media-deployment
       labels:
-        label-key1: label-value1
+        app: sosial-media
     spec:
       containers:
-      - name: sosial-media
+      - name: dylanjuan/sosial-media
         image: dylanjuan/sosial-media
         ports:
         - containerPort: 80
+
