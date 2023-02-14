@@ -1,21 +1,42 @@
 apiVersion: apps/v1
+
 kind: Deployment
+
 metadata:
+
   name: pesbuk-deployment
+
   labels:
+
     app: sosial-media
+
 spec:
-  replicas: 1
+
+  replicas: 3
+
   selector:
+
     matchLabels:
+
       app: sosial-media
+
   template:
+
     metadata:
+
       labels:
+
         app: sosial-media
+
     spec:
+
       containers:
+
       - name: sosial-media
+
         image: dylanjuan/sosial-media:latest
+
         ports:
+
         - containerPort: 80
+
