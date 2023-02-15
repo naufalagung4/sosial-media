@@ -23,8 +23,8 @@ pipeline {
       }
       stage('Deploy to Server') {
         steps{
-          sh "sed -i 's+DOCKER_TAG+${BUILD_NUMBER}+g' servicedeployment.yml"
-          sh "kubectl apply -f servicedeployment.yml"        
+          sh "sed -i 's+DOCKER_TAG+${BUILD_NUMBER}+g' sosmed-deployment.yaml"
+          sh "kubectl apply -f sosmed-deployment.yaml"        
         }
       }
     }
