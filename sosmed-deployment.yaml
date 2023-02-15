@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sosmed-media
+  labels:
+    app: sosial-media
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sosial-media
+  template:
+    metadata:
+      labels:
+        app: sosial-media
+    spec:
+      containers:
+      - name: sosial-media
+        image: dylanjuan/sosmed-master:6
+        ports:
+        - containerPort: 80
+        env:
+          - name: DB_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: sosmed-configmap
+                key: DB_HOST
+          - name: DB_PASS
+            valueFrom:
+              configMapKeyRef:
+                name: sosmed-configmap
+                key: DB_PASS
+          - name: DB_USER
+            valueFrom:
+              configMapKeyRef:
+                name: sosmed-configmap
+                key: DB_USER
+          - name: DB_NAME
+            valueFrom:
+              configMapKeyRef:
+                name: sosmed-configmap
+                key: DB_NAME
