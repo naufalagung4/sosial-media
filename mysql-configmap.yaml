@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  MYSQL_ROOT_PASSWORD: Ict12345!
+  MYSQL_DATABASE: kijang
+  MYSQL_USER: kelompok3
+  MYSQL_PASSWORD: Ict12345!
+metadata:
+  name: mysql-configmap
